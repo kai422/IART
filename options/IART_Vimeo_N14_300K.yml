@@ -1,0 +1,116 @@
+# general settings
+name: IART_Vimeo_N14_300K
+model_type: RecurrentMixPrecisionRTModel
+scale: 4
+num_gpu: 8  # official: 8 GPUs
+manual_seed: 0
+find_unused_parameters: false
+use_static_graph: true
+# dataset and data loader settings
+datasets:
+  train:
+    name: Vimeo90K
+    type: Vimeo90KRecurrentDataset
+    dataroot_gt: datasets/vimeo90k/GT
+    dataroot_lq: datasets/vimeo90k/BIx4
+    meta_info_file: datasets/vimeo90k/meta_info_Vimeo90K_train_GT.txt
+    io_backend:
+      type: disk
+
+    num_frame: -1
+    gt_size: 256
+    interval_list: [1]
+    random_reverse: false
+    use_hflip: true
+    use_rot: true
+    flip_sequence: true
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 6
+    batch_size_per_gpu: 1
+    dataset_enlarge_ratio: 200
+    prefetch_mode: ~
+
+  val:
+    name: Vid4
+    type: VideoRecurrentTestDataset
+    dataroot_gt: datasets/Vid4/GT
+    dataroot_lq: datasets/Vid4/BIx4
+
+    cache_data: true
+    io_backend:
+      type: disk
+
+    num_frame: -1  # not needed
+
+# network structures
+network_g:
+  type: IART
+  mid_channels: 64
+  embed_dim: 120
+  depths: [6, 6, 6]
+  num_heads: [6,6,6]
+  window_size: [3, 8, 8]
+  num_frames: 3
+  cpu_cache_length: 100
+  is_low_res_input: True
+  spynet_path: experiments/pretrained_models/flownet/spynet_sintel_final-3d2a1287.pth
+
+# path
+path:
+  pretrain_network_g: experiments/pretrained_models/IART_REDS_N16_600000.pth
+  strict_load_g: true
+  resume_state: ~
+
+# training settings
+train:
+  ema_decay: 0.999
+  optim_g:
+    type: Adam
+    lr: !!float 1e-4
+    weight_decay: 0
+    betas: [0.9, 0.99]
+
+  scheduler:
+    type: CosineAnnealingRestartLR
+    periods: [300000]
+    restart_weights: [1]
+    eta_min: !!float 1e-7
+
+  total_iter: 300000
+  warmup_iter: -1  # no warm up
+  fix_flow: -1
+  flow_lr_mul: 0.25
+
+  # losses
+  pixel_opt:
+    type: CharbonnierLoss
+    loss_weight: 1.0
+    reduction: mean
+
+# validation settings
+val:
+  val_freq: !!float 5e3
+  save_img: false
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+
+# logging settings
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: true
+  wandb:
+    project: ~
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
+

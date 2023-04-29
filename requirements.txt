@@ -1,0 +1,11 @@
+numpy
+opencv-python
+requests
+tqdm
+scipy
+Pillow
+pyyaml
+tensorboard
+lmdb
+basicsr
+timm
