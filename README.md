@@ -17,7 +17,7 @@ This paper studies the impact of re-sampling on alignment for video super-resolu
   <img width="800" src="method.png">
 </p>
 
-*A comparison diagram between bilinear interpolation and our implicit alignment. Bilinear interpolation fixes aggregation weight $W_{bi}$. Implicit alignment learns affinity through the cross-attention module to calculate the final result. Red grids denote the source frame, purple grids denote the target frame, and blue grids denote the aligned frame.*
+*A comparison diagram between bilinear interpolation and our implicit alignment. Bilinear interpolation fixes aggregation weight W_bi. Implicit alignment learns affinity through the cross-attention module to calculate the final result. Red grids denote the source frame, purple grids denote the target frame, and blue grids denote the aligned frame.*
 
 ## Results 
 | REDS4 | Frames| PSNR    | SSIM  | Download |
