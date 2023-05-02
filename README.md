@@ -4,7 +4,7 @@ This is an offical PyTorch implementation of
 
 
 >**An Implicit Alignment for Video Super-Resolution.**  
-\[arXiv](https://arxiv.org/abs/2305.00163))\]   
+[arXiv](https://arxiv.org/abs/2305.00163))
 [Kai Xu](https://kai422.github.io/), [Ziwei Yu](https://sites.google.com/view/yuziwei/home), Xin Wang, Michael Bi M, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
