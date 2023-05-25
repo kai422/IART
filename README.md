@@ -36,6 +36,21 @@ This paper studies the impact of re-sampling on alignment for video super-resolu
 | PSRT-recurrent  |   16  | 32.72 | 0.9106 |
 | **IART (ours)**  |   **16**  | **32.90** | **0.9138** | [model](https://drive.google.com/file/d/14Pn3uCJ5IvkLJD7HPPqXbV1Si43FV2k2/view?usp=share_link) \| [results](https://drive.google.com/file/d/1GcIGxFdLjkhy0USh3bk0O4RbMUSbnHPD/view?usp=share_link)    |
 
+| Vimeo90k-T | Frames| PSNR    | SSIM  |Download |
+|:-----|:-----:|:------:|:------:|:------:|
+| BasicVSR++  |   14  | 37.79 | 0.9500 |
+| VRT  |   7  | 38.20 | 0.9530 |
+| RVRT  |   14  | 38.15 | 0.9527 |
+| PSRT-recurrent  |   14  | 38.27 | 0.9536 |
+| **IART (ours)**  |   7  | 38.14 | 0.9528 | [model](https://drive.google.com/file/d/14Pn3uCJ5IvkLJD7HPPqXbV1Si43FV2k2/view?usp=share_link) |
+
+| Vid4 | Frames| PSNR    | SSIM  |Download |
+|:-----|:-----:|:------:|:------:|:------:|
+| BasicVSR++  |   14  | 27.79 | 0.8400 |
+| VRT  |   7  | 27.93 | .8425 |
+| RVRT  |   14  | 27.99 | 0.8462 |
+| PSRT-recurrent  |   14  | 28.07 | 0.8485 |
+| **IART (ours)**  |   **7**  | **28.26** | **0.8517** | [model](https://drive.google.com/file/d/14Pn3uCJ5IvkLJD7HPPqXbV1Si43FV2k2/view?usp=share_link) |
 
 ## Installation
 
