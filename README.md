@@ -11,7 +11,7 @@ This is an offical PyTorch implementation of
 
 >**An Implicit Alignment for Video Super-Resolution.**  
 [[arXiv]](https://arxiv.org/abs/2305.00163)       
-[Kai Xu](https://kai422.github.io/), [Ziwei Yu](https://sites.google.com/view/yuziwei/home), Xin Wang, Michael Bi M, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
+[Kai Xu](https://kai422.github.io/), [Ziwei Yu](https://sites.google.com/view/yuziwei/home), Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
 Video super-resolution commonly uses a frame-wise alignment to support the propagation of information over time. The role of alignment is well-studied for low-level enhancement in video, but existing works have overlooked one critical step -- re-sampling.
