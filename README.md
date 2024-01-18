@@ -1,4 +1,4 @@
-# An Implicit Alignment for Video Super-Resolution
+# Enhancing Video Super-Resolution via Implicit Resampling-based Alignment 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-reds4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-reds4-4x-upscaling?p=an-implicit-alignment-for-video-super)
 
