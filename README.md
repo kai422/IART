@@ -5,8 +5,7 @@
 
 **Updates:**
 
-- [Jan 18, 2024] See the [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) for speed and computational comparisons, as well as more qualitative comparisons. 
-
+-January 18, 2024: We have enhanced our [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) with improved illustrations, along with detailed speed comparisons and additional qualitative analyses!
 
 https://github.com/kai422/IART/assets/31679416/b32abb4a-9c27-43ce-bef6-1bde073ada18
 
