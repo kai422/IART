@@ -3,6 +3,11 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-reds4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-reds4-4x-upscaling?p=an-implicit-alignment-for-video-super)
 
 
+**Updates:**
+
+- [Jan 18, 2024] See the [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) for speed and computational comparisons, as well as more qualitative comparisons. 
+
+
 https://github.com/kai422/IART/assets/31679416/b32abb4a-9c27-43ce-bef6-1bde073ada18
 
 
@@ -10,8 +15,8 @@ This is an offical PyTorch implementation of
 
 
 >**An Implicit Alignment for Video Super-Resolution.**  
-[[arXiv]](https://arxiv.org/abs/2305.00163)       
-[Kai Xu](https://kai422.github.io/), [Ziwei Yu](https://sites.google.com/view/yuziwei/home), Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
+[Paper](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
+[Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
 Video super-resolution commonly uses a frame-wise alignment to support the propagation of information over time. The role of alignment is well-studied for low-level enhancement in video, but existing works have overlooked one critical step -- re-sampling.
