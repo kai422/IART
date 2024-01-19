@@ -16,7 +16,7 @@ This is an offical PyTorch implementation of
 
 
 >**An Implicit Alignment for Video Super-Resolution.**  
-[Paper](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
+[[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
 [Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
