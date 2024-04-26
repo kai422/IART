@@ -1,4 +1,4 @@
-# [CVPR 2024] Enhancing Video Super-Resolution via Implicit Resampling-based Alignment (Highlight)
+# [CVPR 2024 Highlight] Enhancing Video Super-Resolution via Implicit Resampling-based Alignment
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-reds4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-reds4-4x-upscaling?p=an-implicit-alignment-for-video-super)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-vid4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-vid4-4x-upscaling?p=an-implicit-alignment-for-video-super)
@@ -12,7 +12,9 @@
 This is an offical PyTorch implementation of 
 
 
->**[CVPR 2024 Highlight]** Enhancing Video Super-Resolution via Implicit Resampling-based Alignment. [[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
+>**[CVPR 2024 Highlight]** 
+**Enhancing Video Super-Resolution via Implicit Resampling-based Alignment.** 
+[[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
 [Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
