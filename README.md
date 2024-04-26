@@ -9,10 +9,6 @@
 - January 18, 2024: Check our [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) with more illustrations, speed comparisons and additional qualitative results!
 
 
-
-https://github.com/kai422/IART/assets/31679416/b32abb4a-9c27-43ce-bef6-1bde073ada18
-
-
 This is an offical PyTorch implementation of 
 
 
