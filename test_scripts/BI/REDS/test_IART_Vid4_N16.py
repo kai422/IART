@@ -13,14 +13,14 @@ def main():
     # -------------------- Configurations -------------------- #
     device = torch.device('cuda')
     save_imgs = True
-    test_y_channel = False
+    test_y_channel = True
     crop_border = 0
 
-    model_path = 'experiments/pretrained_models/IART_REDS_N6_300000.pth'
-    test_name = f'IART_REDS_N6'
+    model_path = 'experiments/pretrained_models/IART_REDS_BI_N16.pth'
+    test_name = f'IART_Vid4_N16'
 
-    lr_folder = 'datasets/REDS/val_REDS4_sharp_bicubic'
-    gt_folder = 'datasets/REDS/val_REDS4_sharp'
+    lr_folder = 'datasets/Vid4/BIx4'
+    gt_folder = 'datasets/Vid4/GT'
 
     save_folder = f'results/{test_name}'
     os.makedirs(save_folder, exist_ok=True)

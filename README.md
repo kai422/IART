@@ -1,9 +1,10 @@
-# [CVPR 2024] Enhancing Video Super-Resolution via Implicit Resampling-based Alignment 
+# [CVPR 2024] Enhancing Video Super-Resolution via Implicit Resampling-based Alignment (Highlight)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-reds4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-reds4-4x-upscaling?p=an-implicit-alignment-for-video-super)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-vid4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-vid4-4x-upscaling?p=an-implicit-alignment-for-video-super)
 
 **Updates:**
+- January 18, 2024: Check our [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) with more illustrations, speed comparisons and additional qualitative results!
 
 - January 18, 2024: Check our [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) with more illustrations, speed comparisons and additional qualitative results!
 
@@ -20,47 +21,25 @@ This is an offical PyTorch implementation of
 [Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
-Video super-resolution commonly uses a frame-wise alignment to support the propagation of information over time. The role of alignment is well-studied for low-level enhancement in video, but existing works have overlooked one critical step -- re-sampling.
-Most works, regardless of how they compensate for motion between frames, be it flow-based warping or deformable convolution/attention, use the default choice of bilinear interpolation for re-sampling. However, bilinear interpolation acts effectively as a low-pass filter and thus hinders the aim of recovering high-frequency content for super-resolution.
-
-This paper studies the impact of re-sampling on alignment for video super-resolution. Extensive experiments reveal that for alignment to be effective, the re-sampling should preserve the original sharpness of the features and prevent distortions. From these observations, we propose an implicit alignment method that re-samples through a window-based cross-attention with sampling positions encoded by sinusoidal positional encoding. The re-sampling is implicitly computed by learned network weights. Experiments show that the proposed implicit alignment enhances the performance of state-of-the-art frameworks on both synthetic and real-world datasets.
+In video super-resolution, it is common to use a frame-wise alignment to support the propagation of information over time.  The role of alignment is well-studied for low-level enhancement in video, but existing works overlook a critical step -- resampling.  
+We show through extensive experiments that for alignment to be effective, the resampling should preserve the reference frequency spectrum while minimizing spatial distortions. 
+However, most existing works simply use a default choice of bilinear interpolation for resampling even though bilinear interpolation has a smoothing effect and hinders super-resolution.
+From these observations, we propose an implicit resampling-based alignment.  
+The sampling positions are encoded by a sinusoidal positional encoding, while the value is estimated with a coordinate network and a window-based cross-attention. 
+We show that bilinear interpolation inherently attenuates high-frequency information while an MLP-based coordinate network can approximate more frequencies.
+Experiments on synthetic and real-world datasets show that alignment with our proposed implicit resampling enhances the performance of state-of-the-art frameworks with minimal impact on both compute and parameters.
 
 <p align="center">
   <img width="800" src="method.png">
 </p>
 
-*A comparison diagram between bilinear interpolation and our implicit alignment. Bilinear interpolation fixes aggregation weight W_bi. Implicit alignment learns affinity through the cross-attention module to calculate the final result. Red grids denote the source frame, purple grids denote the target frame, and blue grids denote the aligned frame.*
+
 
 ## Results 
-| REDS4 | Frames| PSNR    | SSIM  | Download |
-|:-----|:-----:|:------:|:------:|:------:|
-| PSRT-recurrent  |   6  | 31.88 | 0.8964 |
-| **IART (ours)** |   **6**  | **32.15** | **0.9010** |[model](https://drive.google.com/file/d/1L8TsTzINe2sx5UXISjGQmSEpI7GDDgT2/view?usp=share_link) \| [results](https://drive.google.com/file/d/1Eesfph5QHvjKb3YiwdiiHGhjOzbZuLP3/view?usp=share_link)    | 
+<p align="center">
+  <img width="800" src="results.png">
+</p>
 
-
-| REDS4 | Frames| PSNR    | SSIM  |Download |
-|:-----|:-----:|:------:|:------:|:------:|
-| BasicVSR++  |   30  | 32.39 | 0.9069 |
-| VRT  |   16  | 32.19 | 0.9006 |
-| RVRT  |   30  | 32.75 | 0.9113 |
-| PSRT-recurrent  |   16  | 32.72 | 0.9106 |
-| **IART (ours)**  |   **16**  | **32.90** | **0.9138** | [model](https://drive.google.com/file/d/14Pn3uCJ5IvkLJD7HPPqXbV1Si43FV2k2/view?usp=share_link) \| [results](https://drive.google.com/file/d/1GcIGxFdLjkhy0USh3bk0O4RbMUSbnHPD/view?usp=share_link)    |
-
-| Vimeo90k-T | Frames| PSNR    | SSIM  |Download |
-|:-----|:-----:|:------:|:------:|:------:|
-| BasicVSR++  |   14  | 37.79 | 0.9500 |
-| VRT  |   7  | 38.20 | 0.9530 |
-| RVRT  |   14  | 38.15 | 0.9527 |
-| PSRT-recurrent  |   14  | 38.27 | 0.9536 |
-| **IART (ours)**  |   7  | 38.14 | 0.9528 | [model](https://drive.google.com/file/d/1RG-R1zr_2Hl8CFi1kpw4tgCsyHfL8oeR/view?usp=sharing) |
-
-| Vid4 | Frames| PSNR    | SSIM  |Download |
-|:-----|:-----:|:------:|:------:|:------:|
-| BasicVSR++  |   14  | 27.79 | 0.8400 |
-| VRT  |   7  | 27.93 | .8425 |
-| RVRT  |   14  | 27.99 | 0.8462 |
-| PSRT-recurrent  |   14  | 28.07 | 0.8485 |
-| **IART (ours)**  |   **7**  | **28.26** | **0.8517** | [model](https://drive.google.com/file/d/1RG-R1zr_2Hl8CFi1kpw4tgCsyHfL8oeR/view?usp=sharing) |
 
 ## Installation
 
@@ -86,18 +65,32 @@ datasets/
 
 ## Testing
 
-Download models and put them under `experiments/pretrained_models/`
+Download models from [this link](https://drive.google.com/drive/folders/1MIUK37Izc4IcA_a3eSH-21EXOZO5G5qU?usp=sharing) and put them under `experiments/`.
 
 ```bash
-# VSR trained on REDS with 6 input frames, tested on REDS4
-CUDA_VISIBLE_DEVICES=0 python test_IART_reds_N6.py
+# Run demo on frames under `demo/Vid4_BI`:
+python demo.py
 
-# VSR trained on REDS with 16 input frames, tested on REDS4
-CUDA_VISIBLE_DEVICES=0 python test_IART_reds_N16.py
+# Testing:
+# For model trained on REDS dataset with BI degradation. 
+python test_scripts/BI/REDS/test_IART_REDS4_N6.py
+python test_scripts/BI/REDS/test_IART_REDS4_N16.py
+python test_scripts/BI/REDS/test_IART_Vid4_N6.py
+python test_scripts/BI/REDS/test_IART_Vid4_N16.py
 
+# For model trained on Vimeo-90K dataset with BI degradation. 
+python test_scripts/BI/Vimeo-90K/test_IART_Vid4.py
+python test_scripts/BI/Vimeo-90K/test_IART_Vimeo-90K-T.py
+
+# For model trained on Vimeo-90K dataset with BD degradation.
+python test_scripts/BD/Vimeo-90K/test_IART_UDM10.py
+python test_scripts/BD/Vimeo-90K/test_IART_Vid4.py
+python test_scripts/BD/Vimeo-90K/test_IART_Vimeo-90K-T.py
 ```
 
 ## Training
+
+The following script is for training on BI degradation. You can simply change the data for BD degradation.
 
 ```bash
 # VSR trained on REDS with 6 input frames, tested on REDS4

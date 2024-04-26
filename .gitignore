@@ -14,9 +14,9 @@ experiments/REDS_200K_N6_RT_lite_bialign
 
 # Distribution / packaging
 .Python
-datasets/val_REDS4_sharp
-datasets/val_REDS4_sharp_bicubic
-
+experiments/
+datasets/
+results/
 build/
 develop-eggs/
 dist/
