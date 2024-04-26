@@ -4,7 +4,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-implicit-alignment-for-video-super/video-super-resolution-on-vid4-4x-upscaling)](https://paperswithcode.com/sota/video-super-resolution-on-vid4-4x-upscaling?p=an-implicit-alignment-for-video-super)
 
 **Updates:**
-- January 18, 2024: Check our [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) with more illustrations, speed comparisons and additional qualitative results!
+- April 26, 2024: We released a new model trained on Vimeo-90K with DB degradation.
 
 - January 18, 2024: Check our [updated paper](https://github.com/kai422/IART/blob/main/arxiv.pdf) with more illustrations, speed comparisons and additional qualitative results!
 
@@ -16,7 +16,7 @@ https://github.com/kai422/IART/assets/31679416/b32abb4a-9c27-43ce-bef6-1bde073ad
 This is an offical PyTorch implementation of 
 
 
->**[CVPR 2024] An Implicit Alignment for Video Super-Resolution.**  
+>**[CVPR 2024 Highlight]** Enhancing Video Super-Resolution via Implicit Resampling-based Alignment.  
 [[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
 [Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
