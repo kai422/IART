@@ -12,18 +12,10 @@
 This is an offical PyTorch implementation of 
 
 
->**[CVPR 2024 Highlight]** Enhancing Video Super-Resolution via Implicit Resampling-based Alignment.  
-[[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
+>**[CVPR 2024 Highlight]** Enhancing Video Super-Resolution via Implicit Resampling-based Alignment. [[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf)       
 [Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
-In video super-resolution, it is common to use a frame-wise alignment to support the propagation of information over time.  The role of alignment is well-studied for low-level enhancement in video, but existing works overlook a critical step -- resampling.  
-We show through extensive experiments that for alignment to be effective, the resampling should preserve the reference frequency spectrum while minimizing spatial distortions. 
-However, most existing works simply use a default choice of bilinear interpolation for resampling even though bilinear interpolation has a smoothing effect and hinders super-resolution.
-From these observations, we propose an implicit resampling-based alignment.  
-The sampling positions are encoded by a sinusoidal positional encoding, while the value is estimated with a coordinate network and a window-based cross-attention. 
-We show that bilinear interpolation inherently attenuates high-frequency information while an MLP-based coordinate network can approximate more frequencies.
-Experiments on synthetic and real-world datasets show that alignment with our proposed implicit resampling enhances the performance of state-of-the-art frameworks with minimal impact on both compute and parameters.
 
 <p align="center">
   <img width="800" src="method.png">
