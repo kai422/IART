@@ -13,8 +13,10 @@ This is an offical PyTorch implementation of
 
 
 >**[CVPR 2024 Highlight]** 
-**Enhancing Video Super-Resolution via Implicit Resampling-based Alignment.** 
+**Enhancing Video Super-Resolution via Implicit Resampling-based Alignment.**
+>
 [[Paper]](https://github.com/kai422/IART/blob/main/arxiv.pdf) [[Video]](https://www.youtube.com/watch?v=ANdgX-erbzI)
+>
 [Kai Xu](https://kai422.github.io/), Ziwei Yu, Xin Wang, Michael Bi Mi, [Angela Yao](https://www.comp.nus.edu.sg/~ayao/)    
 Computer Vision and Machine Learning group, NUS.   
 
